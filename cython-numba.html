@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Accelerating Python using Cython, Numba, and JAX &#8212; Accelerating Python with Cython, Numba and JAX</title>
+    <title>Hands-on Cython and Numba &#8212; Accelerating Python with Cython, Numba and JAX</title>
   
   
   
@@ -152,8 +152,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Accelerating Python using Cython, Numba, and JAX</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hands-on Cython and Numba</a></li>
 
 
 </ul>
@@ -370,7 +369,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Accelerating Python using Cython, Numba, and JAX</h1>
+    <h1>Hands-on Cython and Numba</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,7 +379,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Accelerating Python using Cython, Numba, and JAX</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hands-on Cython and Numba</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-flow-problem">Heat Flow Problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#governing-differential-equation">Governing differential equation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-different-approximation-for-a-rectangular-mesh">Finite different approximation for a rectangular mesh</a><ul class="nav section-nav flex-column">
@@ -400,9 +399,9 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-measurement">Performance measurement</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-heat-maps-to-make-sure-the-algorithms-are-the-same">Plot heat maps to make sure the algorithms are the same</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#large-scale-problem">Large-scale problem</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wow-cython-and-numba-are-so-much-faster-than-pure-python-it-s-difficult-to-observe-differences-in-performance-for-such-a-small-domain-so-let-s-increase-the-mesh-density-so-the-calculations-take-a-little-bit-longer">Wow! Cython and Numba are so much faster than pure Python. It’s difficult to observe differences in performance for such a small domain, so let’s increase the mesh density so the calculations take a little bit longer</a></li>
 </ul>
 
             </nav>
@@ -415,9 +414,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="accelerating-python-using-cython-numba-and-jax">
-<h1>Accelerating Python using Cython, Numba, and JAX<a class="headerlink" href="#accelerating-python-using-cython-numba-and-jax" title="Permalink to this heading">#</a></h1>
-<p>Python is a popular programming language in natural hazards engineering research because it is free and open-source, and has a plethora of powerful packages for handling our community’s computing needs. However, Python is an interpreted language and is inherently slower and less efficient than compiled languages like Fortran, C, and C++. As a result, many scripts written in Python, particularly those involving loops, can run significantly faster with a few minor modifications. This webinar will demonstrate how vectorized calculations using Numpy arrays and Scipy are significantly faster than the same operations coded in Python. We will demonstrate how to use Cython to compile Python code to C, which can improve performance by orders of magnitude. We will also demonstrate how to use just in time (JIT) compilation and JAX (Numpy on steroids) to accelerate Python, particularly using GPU’s.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="hands-on-cython-and-numba">
+<h1>Hands-on Cython and Numba<a class="headerlink" href="#hands-on-cython-and-numba" title="Permalink to this heading">#</a></h1>
+<p>Python is a popular programming language in natural hazards engineering research because it is free and open-source, and has a plethora of powerful packages for handling our community’s computing needs. However, Python is an interpreted language and is inherently slower and less efficient than compiled languages like Fortran, C, and C++. As a result, many scripts written in Python, particularly those involving loops, can run significantly faster with a few minor modifications. This webinar will demonstrate how vectorized calculations using Numpy arrays and Scipy are significantly faster than the same operations coded in Python. We will demonstrate how to use Cython to compile Python code to C, which can improve performance by orders of magnitude. We will also demonstrate how to use just in time (JIT) compilation to accelerate Python, particularly using GPU’s.</p>
 <section id="heat-flow-problem">
 <h2>Heat Flow Problem<a class="headerlink" href="#heat-flow-problem" title="Permalink to this heading">#</a></h2>
 <p>The relative performance of different coding approaches is demonstrated using a finite difference solution to the 2D transient heat flow problem for a square domain with a constant initial temperature subject to a temperature change on the top.</p>
@@ -662,9 +661,9 @@ Python Convolution time: = 0.322 seconds
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="wow-cython-and-numba-are-so-much-faster-than-pure-python-it-s-difficult-to-observe-differences-in-performance-for-such-a-small-domain-so-let-s-increase-the-mesh-density-so-the-calculations-take-a-little-bit-longer">
-<h1>Wow! Cython and Numba are so much faster than pure Python. It’s difficult to observe differences in performance for such a small domain, so let’s increase the mesh density so the calculations take a little bit longer<a class="headerlink" href="#wow-cython-and-numba-are-so-much-faster-than-pure-python-it-s-difficult-to-observe-differences-in-performance-for-such-a-small-domain-so-let-s-increase-the-mesh-density-so-the-calculations-take-a-little-bit-longer" title="Permalink to this heading">#</a></h1>
+<section id="large-scale-problem">
+<h2>Large-scale problem<a class="headerlink" href="#large-scale-problem" title="Permalink to this heading">#</a></h2>
+<p>Wow! Cython and Numba are so much faster than pure Python. It’s difficult to observe differences in performance for such a small domain, so let’s increase the mesh density so the calculations take a little bit longer</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="mi">50</span>
@@ -700,6 +699,7 @@ Numba time: = 0.564 seconds
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -760,7 +760,7 @@ Numba time: = 0.564 seconds
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Accelerating Python using Cython, Numba, and JAX</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hands-on Cython and Numba</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-flow-problem">Heat Flow Problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#governing-differential-equation">Governing differential equation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-different-approximation-for-a-rectangular-mesh">Finite different approximation for a rectangular mesh</a><ul class="nav section-nav flex-column">
@@ -780,9 +780,9 @@ Numba time: = 0.564 seconds
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-measurement">Performance measurement</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-heat-maps-to-make-sure-the-algorithms-are-the-same">Plot heat maps to make sure the algorithms are the same</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#large-scale-problem">Large-scale problem</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wow-cython-and-numba-are-so-much-faster-than-pure-python-it-s-difficult-to-observe-differences-in-performance-for-such-a-small-domain-so-let-s-increase-the-mesh-density-so-the-calculations-take-a-little-bit-longer">Wow! Cython and Numba are so much faster than pure Python. It’s difficult to observe differences in performance for such a small domain, so let’s increase the mesh density so the calculations take a little bit longer</a></li>
 </ul>
 
   </nav></div>
