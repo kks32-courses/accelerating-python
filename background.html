@@ -346,6 +346,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Compiled Language</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreted-language">Interpreted Language</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-using-just-in-time-compilation">Hybrid using Just In Time Compilation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons">Pros and Cons</a></li>
 </ul>
 
             </nav>
@@ -360,15 +361,52 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="compiled-language">
 <h1>Compiled Language<a class="headerlink" href="#compiled-language" title="Permalink to this heading">#</a></h1>
+<p>A compiled language uses a compiler to translate source code to machine code (a.k.a. a binary executable file). The compiler reads the entire source code project to create an executable file specific to a particular hardware architecture. Examples of compiled languages are C, C++, and Fortran.</p>
 <p><img alt="compiled language image" src="_images/CompiledLanguage.png" /></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="interpreted-language">
 <h1>Interpreted Language<a class="headerlink" href="#interpreted-language" title="Permalink to this heading">#</a></h1>
+<p>An interpreted language uses an interpreter to translate source code to machine code. The interpreter reads the source code line by line at runtime, and produces machine code on the fly. Examples of interpreted languages are Python, Javascript, and Ruby.</p>
 <p><img alt="interpreted language image" src="_images/InterpretedLanguage.png" /></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="hybrid-using-just-in-time-compilation">
 <h1>Hybrid using Just In Time Compilation<a class="headerlink" href="#hybrid-using-just-in-time-compilation" title="Permalink to this heading">#</a></h1>
+<p>Just in time (JIT) uses an interpreter to produce compiled code at runtime, and is a hybrid between a compiled language and an interpreted language. The first time the code is run may execute slowly, but subsequent runs will utilize the compiled machine code and will execute quickly.</p>
 <p><img alt="JIT image" src="_images/HybridJIT.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pros-and-cons">
+<h1>Pros and Cons<a class="headerlink" href="#pros-and-cons" title="Permalink to this heading">#</a></h1>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Compiled</p></th>
+<th class="head"><p>Interpreted</p></th>
+<th class="head"><p>JIT</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Execution Speed</p></td>
+<td><p>✔️</p></td>
+<td><p>✖️</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>Code Development</p></td>
+<td><p>✖️</p></td>
+<td><p>✔️</p></td>
+<td><p>✔️</p></td>
+</tr>
+<tr class="row-even"><td><p>Private Code</p></td>
+<td><p>✔️</p></td>
+<td><p>✖️</p></td>
+<td><p>✖️</p></td>
+</tr>
+<tr class="row-odd"><td><p>Portability</p></td>
+<td><p>✖️</p></td>
+<td><p>✔️</p></td>
+<td><p>✔️</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 
     <script type="text/x-thebe-config">
@@ -423,6 +461,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Compiled Language</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreted-language">Interpreted Language</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-using-just-in-time-compilation">Hybrid using Just In Time Compilation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons">Pros and Cons</a></li>
 </ul>
 
   </nav></div>
