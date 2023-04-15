@@ -19,8 +19,8 @@ Just in time (JIT) uses an interpreter to produce compiled code at runtime, and 
 # Pros and Cons
 
 |                  | Compiled | Interpreted | JIT |
-| ---------------- | -------- | ----------- | --- |
-| Execution Speed  | ✔️       | ✖️         | ✅  |
+| ---------------- | :------: | :---------: | :-: |
+| Execution Speed  | ✔️       | ✖️         | ✔️  |
 | Code Development | ✖️       | ✔️         | ✔️  |
 | Private Code     | ✔️       | ✖️         | ✖️  |
 | Portability      | ✖️       | ✔️         | ✔️  |
