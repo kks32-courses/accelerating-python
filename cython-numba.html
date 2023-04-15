@@ -153,8 +153,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Hands-on Cython and Numba</a></li>
-
-
 </ul>
 
     </div>
@@ -379,7 +377,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hands-on Cython and Numba</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-flow-problem">Heat Flow Problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#governing-differential-equation">Governing differential equation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-different-approximation-for-a-rectangular-mesh">Finite different approximation for a rectangular mesh</a><ul class="nav section-nav flex-column">
@@ -390,20 +387,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-time-step-above-we-find-that-left-1-4-gamma-right-0-and-therefore-the-resulting-equation-is">Using the time step above, we find that <span class="math notranslate nohighlight">\(\left(1-4\gamma\right)=0\)</span> and therefore the resulting equation is:</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-input-variables">Define input variables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-input-variables">Define input variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-numba-jit">Using Numba JIT</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-convolution-rather-than-a-loop">Writing convolution rather than a loop</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-measurement">Performance measurement</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-measurement">Performance measurement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-heat-maps-to-make-sure-the-algorithms-are-the-same">Plot heat maps to make sure the algorithms are the same</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#large-scale-problem">Large-scale problem</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -463,20 +453,19 @@ k = index counter for time</p>
 <p><span class="math notranslate nohighlight">\(T_{ij}^{k+1} = \gamma\left(T_{i+1,j}^k + T_{i,j+1}^k + T_{i-1,j}^k + T_{i,j-1}^k\right)\)</span></p>
 </section>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="define-input-variables">
-<h1>Define input variables<a class="headerlink" href="#define-input-variables" title="Permalink to this heading">#</a></h1>
-<p>L = plate length<br />
-Nt = number of time steps<br />
-Nx = number of increments in x-direction (same as y-direction since plate is square)<br />
-alpha = thermal diffusivity<br />
-dx = node spacing<br />
-dt = time increment<br />
-T_top = temperature of top of plate<br />
-T_left = temperature of left side of plate<br />
-T_right = temperature of right side of plate<br />
-T_bottom = temperature of bottom of plate<br />
-T_initial = initial temperature of plate</p>
+<section id="define-input-variables">
+<h2>Define input variables<a class="headerlink" href="#define-input-variables" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">L</span></code>         = plate length<br />
+<code class="docutils literal notranslate"><span class="pre">Nt</span></code>        = number of time steps<br />
+<code class="docutils literal notranslate"><span class="pre">Nx</span></code>        = number of increments in x-direction (same as y-direction since plate is square)<br />
+<code class="docutils literal notranslate"><span class="pre">alpha</span></code>     = thermal diffusivity<br />
+<code class="docutils literal notranslate"><span class="pre">dx</span></code>        = node spacing<br />
+<code class="docutils literal notranslate"><span class="pre">dt</span></code>        = time increment<br />
+<code class="docutils literal notranslate"><span class="pre">T_top</span></code>     = temperature of top of plate<br />
+<code class="docutils literal notranslate"><span class="pre">T_left</span></code>    = temperature of left side of plate<br />
+<code class="docutils literal notranslate"><span class="pre">T_right</span></code>   = temperature of right side of plate<br />
+<code class="docutils literal notranslate"><span class="pre">T_bottom</span></code>  = temperature of bottom of plate<br />
+<code class="docutils literal notranslate"><span class="pre">T_initial</span></code> = initial temperature of plate</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -548,6 +537,7 @@ def calculate_cython(double[:,:,:] T, double gamma):
 </div>
 </div>
 </div>
+</section>
 <section id="using-numba-jit">
 <h2>Using Numba JIT<a class="headerlink" href="#using-numba-jit" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -605,9 +595,8 @@ def calculate_cython(double[:,:,:] T, double gamma):
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="performance-measurement">
-<h1>Performance measurement<a class="headerlink" href="#performance-measurement" title="Permalink to this heading">#</a></h1>
+<section id="performance-measurement">
+<h2>Performance measurement<a class="headerlink" href="#performance-measurement" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -635,6 +624,7 @@ Python Convolution time: = 0.322 seconds
 </div>
 </div>
 </div>
+</section>
 <section id="plot-heat-maps-to-make-sure-the-algorithms-are-the-same">
 <h2>Plot heat maps to make sure the algorithms are the same<a class="headerlink" href="#plot-heat-maps-to-make-sure-the-algorithms-are-the-same" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -760,7 +750,6 @@ Numba time: = 0.564 seconds
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hands-on Cython and Numba</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-flow-problem">Heat Flow Problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#governing-differential-equation">Governing differential equation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-different-approximation-for-a-rectangular-mesh">Finite different approximation for a rectangular mesh</a><ul class="nav section-nav flex-column">
@@ -771,20 +760,13 @@ Numba time: = 0.564 seconds
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-time-step-above-we-find-that-left-1-4-gamma-right-0-and-therefore-the-resulting-equation-is">Using the time step above, we find that <span class="math notranslate nohighlight">\(\left(1-4\gamma\right)=0\)</span> and therefore the resulting equation is:</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-input-variables">Define input variables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-input-variables">Define input variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-numba-jit">Using Numba JIT</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-convolution-rather-than-a-loop">Writing convolution rather than a loop</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-measurement">Performance measurement</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-measurement">Performance measurement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-heat-maps-to-make-sure-the-algorithms-are-the-same">Plot heat maps to make sure the algorithms are the same</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#large-scale-problem">Large-scale problem</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
