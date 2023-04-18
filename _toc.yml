@@ -5,5 +5,5 @@ format: jb-book
 root: README
 chapters:
 - file: background
-- file: vectorized-numpy
+- file: vectorization_jax
 - file: cython-numba
