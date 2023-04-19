@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'cython-numba';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Compiled Languages, Interpreted Languages, and JIT" href="background.html" />
+    <link rel="prev" title="Vectorization and JAX" href="vectorization-jax.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -153,6 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="background.html">Compiled Languages, Interpreted Languages, and JIT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectorization-jax.html">Vectorization and JAX</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Hands-on Cython and Numba</a></li>
 </ul>
 
@@ -407,9 +408,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hands-on-cython-and-numba">
 <h1>Hands-on Cython and Numba<a class="headerlink" href="#hands-on-cython-and-numba" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://colab.research.google.com/github/kks32-courses/accelerating-python/blob/main/exercise/cython-numba.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/kks32-courses/accelerating-python/blob/main/exercise/cython-numba-exercise.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <p>[<img alt="Try on DesignSafe" src="https://raw.githubusercontent.com/geoelements/LearnMPM/main/DesignSafe-Badge.svg" />](<a class="reference external" href="https://jupyter.designsafe-ci.org/user/name/notebooks/CommunityData/Training/Webinar-Accelerating-Python">https://jupyter.designsafe-ci.org/user/name/notebooks/CommunityData/Training/Webinar-Accelerating-Python</a>
-/cython-numba.ipynb)</p>
+/cython-numba-exercise.ipynb)</p>
 <p>Python is a popular programming language in natural hazards engineering research because it is free and open-source, and has a plethora of powerful packages for handling our community’s computing needs. However, Python is an interpreted language and is inherently slower and less efficient than compiled languages like Fortran, C, and C++. As a result, many scripts written in Python, particularly those involving loops, can run significantly faster with a few minor modifications. This webinar will demonstrate how vectorized calculations using Numpy arrays and Scipy are significantly faster than the same operations coded in Python. We will demonstrate how to use Cython to compile Python code to C, which can improve performance by orders of magnitude. We will also demonstrate how to use just in time (JIT) compilation to accelerate Python, particularly using GPU’s.</p>
 <section id="heat-flow-problem">
 <h2>Heat Flow Problem<a class="headerlink" href="#heat-flow-problem" title="Permalink to this heading">#</a></h2>
@@ -738,12 +739,12 @@ Numba time: = 0.933 seconds
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="background.html"
+       href="vectorization-jax.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Compiled Languages, Interpreted Languages, and JIT</p>
+        <p class="prev-next-title">Vectorization and JAX</p>
       </div>
     </a>
 </div></div>
