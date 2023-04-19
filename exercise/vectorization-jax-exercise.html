@@ -542,10 +542,30 @@ Vectorized operation is 404.4 times faster
 <li><p>JAX offers robust support for automatic differentiation, which is particularly useful for machine learning research. Automatic differentiation can be activated with <code class="docutils literal notranslate"><span class="pre">jax.grad()</span></code>.</p></li>
 <li><p>JAX promotes functional programming, as its functions are pure. Unlike NumPy arrays, JAX arrays are always immutable.</p></li>
 </ul>
+<blockquote>
+<div><p>Install JAX on a CPU and restart the kernel</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install --upgrade pip
+!pip install --upgrade &quot;jax[cpu]&quot;
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">jax.numpy</span> <span class="k">as</span> <span class="nn">jnp</span>
 <span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># time step in seconds</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.005</span>
+
+<span class="c1"># Frequency in Hz</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mf">2.0</span>
+
+<span class="c1"># Number of time steps</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100000000</span>
 
 <span class="c1"># JAX array containing time vector consisting of 32 bit floating point precision values</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span> <span class="o">*</span> <span class="n">dt</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">jnp</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
