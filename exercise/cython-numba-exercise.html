@@ -739,6 +739,7 @@ Successfully installed llvmlite-0.39.1 numba-0.56.4
 <h1>Using Scipy’s Convolve Operator<a class="headerlink" href="#using-scipy-s-convolve-operator" title="Permalink to this heading">#</a></h1>
 <p>We know that Python loops are slow thanks to the interpreter. We also know that we can use Cython and Numba / JIT to significantly improve performance. It turns out that we can also use the SciPy signal package to run this code efficiently using the convolve operator. This is kind of equivalent to vectorized calculations because we are passing the loops to efficiently compiled C code within SciPy instead of performing those loops in Python.</p>
 <p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html</a></p>
+<p><img alt="vectorization" src="https://raw.githubusercontent.com/kks32-courses/accelerating-python/main/images/vectorized.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
