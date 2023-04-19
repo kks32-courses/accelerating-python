@@ -5,5 +5,5 @@ format: jb-book
 root: README
 chapters:
 - file: background
-- file: vectorization_jax
+- file: vectorization-jax
 - file: cython-numba
