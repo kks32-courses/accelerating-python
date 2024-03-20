@@ -2,7 +2,7 @@
 > Scott Brandenberg, UCLA and Krishna Kumar, UT Austin
 
 A Hands-On Tutorial
-Wednesday, April 27, 2024, 1:00pm - 2:30pm US Central Time
+Wednesday, March 27, 2024, 1:00pm - 2:30pm US Central Time
 
 The webinar will feature a hands-on component using DesignSafe Jupyter, so please be sure to register for a DesignSafe user account if you don't already have one. If your existing account is inactive, reactivate it by resetting your password.
 
