@@ -6,4 +6,5 @@ root: README
 chapters:
 - file: background
 - file: vectorization-jax
-- file: cython-numba
+- file: heat-flow
+- file: response-spectra
